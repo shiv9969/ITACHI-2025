@@ -19,8 +19,8 @@ async def shortlink(link):
         return link
         
 async def shareus(link):
-    url = f'https://tryshort.in/api'
-    api_key = "41d5dfab6c64a21e0e3e81b6eb3c947f28c7105c"
+    url = f'https://instantearn.in/api'
+    api_key = "fdae4ded7d9f404188ce1b10e8342759116cd66e"
     params = {'api': api_key, 'url': link, 'format': 'text'}
     try:
         async with aiohttp.ClientSession() as session:
@@ -31,8 +31,8 @@ async def shareus(link):
         return shortlink
     
 async def gplinks(link):
-    url = f'https://earnfly.net/api'
-    api_key = "daae6d5c8beace88e448b1059af2946df208b423"
+    url = f'https://instantearn.in/api'
+    api_key = "fdae4ded7d9f404188ce1b10e8342759116cd66e"
     params = {'api': api_key, 'url': link, 'format': 'text'}
     try:
         async with aiohttp.ClientSession() as session:
@@ -43,8 +43,8 @@ async def gplinks(link):
         return shortlink
 
 async def adlinkfly(link):
-    url = f'https://sharedisklinks.com/api'
-    api_key = "fcd5336319ff60a848b4df69fd24664070d1691e"
+    url = f'https://instantearn.in/api'
+    api_key = "fdae4ded7d9f404188ce1b10e8342759116cd66e"
     params = {'api': api_key, 'url': link, 'format': 'text'}
     try:
         async with aiohttp.ClientSession() as session:
@@ -55,8 +55,8 @@ async def adlinkfly(link):
         return shortlink
 
 async def urlshare(link):
-    url = f'https://tnshort.net/api'
-    api_key = "92a0a35b61d389ec15c093890edd7360fb39531b"
+    url = f'https://instantearn.in/api'
+    api_key = "fdae4ded7d9f404188ce1b10e8342759116cd66e"
     params = {'api': api_key, 'url': link, 'format': 'text'}
     try:
         async with aiohttp.ClientSession() as session:
@@ -67,8 +67,8 @@ async def urlshare(link):
         return shortlink
 
 async def runurl(link):
-    url = f'https://runurl.in/api'
-    api_key = "53a50fec01bc1a0931fbe2b4c713bf051811b1ea"
+    url = f'https://instantearn.in/api'
+    api_key = "fdae4ded7d9f404188ce1b10e8342759116cd66e"
     params = {'api': api_key, 'url': link, 'format': 'text'}
     try:
         async with aiohttp.ClientSession() as session:
@@ -79,8 +79,8 @@ async def runurl(link):
         return shortlink
 
 async def thh(link):
-    url = f'https://thh.aslink.in/api'
-    api_key = "bd6f5d021a1c524512ebb40072962203a3abb7de"
+    url = f'https://instantearn.in/api'
+    api_key = "fdae4ded7d9f404188ce1b10e8342759116cd66e"
     params = {'api': api_key, 'url': link, 'format': 'text'}
     try:
         async with aiohttp.ClientSession() as session:
