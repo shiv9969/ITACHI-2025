@@ -1,0 +1,14 @@
+pyrofork==2.3.43
+tgcrypto
+pymongo==4.8.0
+motor==3.5.1
+marshmallow==3.18.0
+umongo==3.1.0
+requests
+bs4
+cinemagoer
+aiohttp
+pytz
+demoji
+aiofiles
+shortzy
