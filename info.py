@@ -25,8 +25,8 @@ INDEX_USER = [int(environ.get('INDEX_USER', '1525203313'))]
 INDEX_USER.extend(ADMINS)
 
 # MongoDB information
-DATABASE_URI = environ.get('DATABASE_URI', "mongodb+srv://bob2025:bob2025@cluster0.vuo6h.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
-DATABASE_NAME = environ.get('DATABASE_NAME', "BOB_FILES")
+DATABASE_URI = environ.get('DATABASE_URI', "mongodb+srv://bob:bobfiles1@bob.sp1vv.mongodb.net/?retryWrites=true&w=majority&appName=bob")
+DATABASE_NAME = environ.get('DATABASE_NAME', "mishraji")
 COLLECTION_NAME = environ.get('COLLECTION_NAME', 'ITACHI_2025')
 
 # Force Subscribe
