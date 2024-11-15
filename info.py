@@ -27,7 +27,7 @@ INDEX_USER.extend(ADMINS)
 # MongoDB information
 DATABASE_URI = environ.get('DATABASE_URI', "mongodb+srv://bob:bobfiles1@bob.sp1vv.mongodb.net/?retryWrites=true&w=majority&appName=bob")
 DATABASE_NAME = environ.get('DATABASE_NAME', "mishraji")
-COLLECTION_NAME = environ.get('COLLECTION_NAME', 'ITACHI_2025')
+COLLECTION_NAME = environ.get('COLLECTION_NAME', 'Telegram_files')
 
 # Force Subscribe
 auth_channel = environ.get('AUTH_CHANNEL', '-1002077157127')
