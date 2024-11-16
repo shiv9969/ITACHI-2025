@@ -19,7 +19,7 @@ BOT_TOKEN = environ.get('BOT_TOKEN', "7507252816:AAHhFHGfoIw233voXgm1_lgu52wb5Gn
 ADMINS = [int(admin) if id_pattern.search(admin) else admin for admin in environ.get('ADMINS', '1991522624 1525203313').split()]
 CHANNELS = [int(ch) if id_pattern.search(ch) else ch for ch in environ.get('CHANNELS', '-1001971879597').split()]
 
-auth_grp = environ.get('AUTH_GROUP')
+auth_grp = environ.get('AUTH_GROUP', "0")
 AUTH_GROUPS = [int(ch) for ch in auth_grp.split()] if auth_grp else None
 INDEX_USER = [int(environ.get('INDEX_USER', '1525203313'))]
 INDEX_USER.extend(ADMINS)
