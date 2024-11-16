@@ -343,7 +343,7 @@ async def start(client, message):
             logging.error(f"Shortner Error: {verifilink}")
             await message.reply_text(text='**First Follow This Importent Basic Steps\n\nStep 1 - Go To Telegram Settings\nStep 2 - Go To Chat Settings\nStep 3 - Turn Off "In-App Browser"\nStep 4 - Now Come Back On Bot\nStep 5 - Contiue To Your Verifiy\n\nFollow This Step One Time & Use Lifetime\nㅤ\nㅤ**')
             await asyncio.sleep(0.7)
-            await message.reply_text(text='**You are not verified today ! Please verify now and get unlimited movie for full day..✔️\n\nTo use this bot you will have to do ᴠᴇʀɪғʏ otherwise you will not be able to use it..✖️**',
+            await message.reply_text(text='**You are not verified today ! Please verify now and get unlimited movie for full day..✔️\n\nTo use this bot you will have to do ᴠᴇʀɪғʏ otherwise you will not be able to use it..✖️\n\nRemove verification `-->` /premium**',
                 reply_markup=InlineKeyboardMarkup(
                     [
                         [InlineKeyboardButton("📩 ᴄʟɪᴄᴋ ᴛᴏ ᴠᴇʀɪғʏ", url=f"{verifilink}")],
