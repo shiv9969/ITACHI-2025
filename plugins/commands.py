@@ -318,7 +318,7 @@ async def start(client, message):
 
         button = []
         button.append([
-                InlineKeyboardButton("📩 sʜᴏᴘᴘɪɴɢ", url=f"https://t.me/Mega_Savings_Zone"),
+                InlineKeyboardButton("📩 All Channels", url=f"https://t.me/addlist/SCNstbbq9h42NTI1"),
                 InlineKeyboardButton("🌿 ʙᴀᴄᴋᴜᴘ", url=f"https://t.me/Bob_Files1")
             ])
         
@@ -450,7 +450,7 @@ async def start(client, message):
         premium_status = await db.is_premium_status(message.from_user.id)
         button = []
         button.append([
-                InlineKeyboardButton("📩 sʜᴏᴘᴘɪɴɢ", url=f"https://t.me/Mega_Savings_Zone"),
+                InlineKeyboardButton("📩 All Channels", url=f"https://t.me/addlist/SCNstbbq9h42NTI1"),
                 InlineKeyboardButton("🌿 ʙᴀᴄᴋᴜᴘ", url=f"https://t.me/Bob_Files1")
             ])
         
