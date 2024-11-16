@@ -705,7 +705,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         )                
     elif query.data == "upgrd":
         buttons = [[
-                    InlineKeyboardButton('💳 Pay', web_app=WebAppInfo(url="https://The-Happy-Hour.Github.io/Payment-Page")),
+                    InlineKeyboardButton('💳 Pay', web_app=WebAppInfo(url="https://qr-code-bob-files.vercel.app")),
                     InlineKeyboardButton('💫 Confirm', callback_data="confirm")
                 ]]
         tnc= f"<a href=https://t.me/{temp.U_NAME}?start=terms>T&C apply</a>"
@@ -717,7 +717,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
        
     elif query.data == "confirm":
         buttons = [[
-                    InlineKeyboardButton('📣 Help', url="https://t.me/ASSALUTER_SHIV"),
+                    InlineKeyboardButton('📣 Help', url="https://t.me/ASSAULTER_SHIV"),
                     InlineKeyboardButton('🏠 Home', callback_data="home"),
                 ]]
         await query.message.edit(
