@@ -138,7 +138,7 @@ async def start(client, message):
         
     if len(message.command) == 2 and message.command[1] in ["subscribe", "upgrade", "premium"]:
         buttons = [[
-                InlineKeyboardButton('💫 Confirm', callback_data="confirm")
+                InlineKeyboardButton('💫 pay', callback_data="confirm")
                 ]]
         tnc= f"<a href=https://t.me/{temp.U_NAME}?start=terms>T&C apply</a>"
         reply_markup = InlineKeyboardMarkup(buttons)
