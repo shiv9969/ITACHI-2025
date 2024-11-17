@@ -1,5 +1,5 @@
 import logging
-from pyrogram import Client, version
+from pyrogram import Client
 from database.ia_filterdb import Media
 from database.users_chats_db import db
 from info import API_ID, API_HASH, BOT_TOKEN
