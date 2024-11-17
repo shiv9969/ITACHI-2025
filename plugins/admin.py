@@ -250,8 +250,7 @@ async def userinfo(client, message):
 @Client.on_message(filters.command(['upgrade', 'premium']))
 async def upgrademsg(_, message):
     buttons = [[
-                InlineKeyboardButton('💳 Pay', web_app=WebAppInfo(url="https://The-Happy-Hour.Github.io/Payment-Page")),
-                InlineKeyboardButton('💫 Confirm', callback_data="confirm")
+                InlineKeyboardButton('💫 pay', callback_data="confirm")
             ]]
     tnc= f"<a href=https://t.me/{temp.U_NAME}?start=terms>T&C apply</a>"
     m = await message.reply(
