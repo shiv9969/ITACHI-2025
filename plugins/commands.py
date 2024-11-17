@@ -71,8 +71,9 @@ async def start(client, message):
     if len(message.command) != 2:
         buttons = [[
                     # InlineKeyboardButton('Refer', callback_data="refer"),
-                    # InlineKeyboardButton('Premium', callback_data="upgrd")
-                    # ],[
+                     InlineKeyboardButton('Premium', callback_data="upgrd"),
+                     InlineKeyboardButton(" ➕ Add To Your Group ➕", url='http://t.me/Bobfilterbot?startgroup=true')
+                     ],[
                     InlineKeyboardButton('⚠️ ғᴇᴀᴛᴜʀᴇ', callback_data='help'),
                     InlineKeyboardButton('🌿 ᴀʙᴏᴜᴛ', callback_data='about')
                     ],[
