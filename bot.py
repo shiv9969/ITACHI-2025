@@ -1,4 +1,5 @@
 import logging
+from typing import AsyncGenerator
 from pyrogram import Client
 from database.ia_filterdb import Media
 from database.users_chats_db import db
