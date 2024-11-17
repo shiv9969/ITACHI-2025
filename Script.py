@@ -36,7 +36,7 @@ Request - <b>{}</b>"""
 
     REQ_REPLY = """<b>ʏᴏᴜʀ ʀᴇᴏ̨ᴜᴇsᴛ sᴀs ʙᴇᴇɴ sᴜᴄᴄᴇssғᴜʟʟʏ\nsᴇɴᴅᴇᴅ ᴀᴅᴍɪɴ 📩✅\n\nᴘʟᴇᴀsᴇ ᴡᴀɪᴛ ғᴏʀ ʀᴇᴘʟʏ....🌿\n\n[ᴅᴏɴ'ᴛ ʙʟᴏᴄᴋ, ᴜɴᴛɪʟ ɢᴇᴛ ʀᴇᴘʟʏ...]</b>"""
 
-    UPGRD_TXT = """<b>\nAds & no direct links.Direct files & no creepy ads, faster response time, no waiting time, web download and web streaming. ({})\n\n</b>**Plan Cost - ₹50/Month**"""
+    UPGRD_TXT = """<b>\nAds & no direct links.Direct files & no creepy ads, faster response time, no waiting time, web download and web streaming. ({})\n\n</b>**For Prices Just Click On Pay"""
   
     
     CNFRM_TEXT = """UPI / QR - https://qr-code-bob-files.vercel.app\n\n**Price - ₹30/week**\n\n₹60/Month**\n\n₹100/2Month**\n\n₹279/6Month**\n\n💫 To Confirm Payment Process, Please Send Your Transaction Screenshot Or Transaction ID To <a href=https://t.me/ASSAULTER_SHIV>ADMIN</a>\n\n📋 Admin delays may occur, request refund if plan activation fails."""
