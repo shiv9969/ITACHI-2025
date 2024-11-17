@@ -348,6 +348,7 @@ async def start(client, message):
                     [
                         [InlineKeyboardButton("📩 ᴄʟɪᴄᴋ ᴛᴏ ᴠᴇʀɪғʏ", url=f"{verifilink}")],
                         [InlineKeyboardButton("🔰 ʜᴏᴡ ᴛᴏ ᴠᴇʀɪғʏ", url=f"telegram.me/kaisekhole/15")],
+                        [InlineKeyboardButton('🎉 Remove Verification 🎉', callback_data="upgrd")],
                         # [InlineKeyboardButton("🔄 Chack My Verify", url=f"https://telegram.me/{temp.U_NAME}?start={temp.U_NAME}-{encypted_user_id}_{file_id}")]
                     ]),
                 # disable_web_page_preview=True
