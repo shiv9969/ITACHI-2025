@@ -706,7 +706,8 @@ async def cb_handler(client: Client, query: CallbackQuery):
         )                
     elif query.data == "upgrd":
         buttons = [[
-                    InlineKeyboardButton('💳 Pay', callback_data="confirm")
+                    InlineKeyboardButton('💳 Pay', callback_data="confirm"),
+                    InlineKeyboardButton("⏪ BACK", callback_data=f"next_{req}_{key}_{off_set}")
                 ]]
         tnc= f"<a href=https://t.me/{temp.U_NAME}?start=terms>T&C apply</a>"
         await query.message.edit(
