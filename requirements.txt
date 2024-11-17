@@ -12,3 +12,5 @@ pytz
 demoji
 aiofiles
 shortzy
+fastapi 
+uvicorn 
