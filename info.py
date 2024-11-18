@@ -16,8 +16,8 @@ API_HASH = environ.get('API_HASH', "c7e952440251e33bb5cce566b29f7254")
 BOT_TOKEN = environ.get('BOT_TOKEN', "7507252816:AAHhFHGfoIw233voXgm1_lgu52wb5GnZqjk")
 
 # Admins, Channels & Users
-ADMINS = [int(admin) if id_pattern.search(admin) else admin for admin in environ.get('ADMINS', '1991522624 1525203313').split()]
-CHANNELS = [int(ch) if id_pattern.search(ch) else ch for ch in environ.get('CHANNELS', '-1001971879597').split()]
+ADMINS = [int(admin) if id_pattern.search(admin) else admin for admin in environ.get('ADMINS', '1991522624 1844994992 1525203313').split()]
+CHANNELS = [int(ch) if id_pattern.search(ch) else ch for ch in environ.get('CHANNELS', '-1001971879597 -1001882174994').split()]
 
 auth_grp = environ.get('AUTH_GROUP', "0") # DONE 
 AUTH_GROUPS = [int(ch) for ch in auth_grp.split()] if auth_grp else None
