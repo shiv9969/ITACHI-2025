@@ -53,7 +53,7 @@ async def add_paid(client, message):
 
         if len(message.command) > 2:
             duration = int(message.command[2])
-            if not ( <= duration <= ):
+            if not (1 <= duration <= 39999):
                 return await message.reply("Duration should be between 1 and 365 days.")
         else:
             duration = 30
