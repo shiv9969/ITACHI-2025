@@ -126,13 +126,13 @@ async def request(client, message):
         await client.send_message(LOG_CHANNEL,f"📝 #New_Request 📝\n\nʙᴏᴛ - {temp.B_NAME}\nɴᴀᴍᴇ - {message.from_user.mention} (<code>{message.from_user.id}</code>)\nRᴇǫᴜᴇꜱᴛ - <code>{movie_name}</code>",
         reply_markup=InlineKeyboardMarkup(
         [[
-            InlineKeyboardButton('not_release', callback_data=f"not_release:{user_id}:{movie_name}"),
-            InlineKeyboardButton('already_available', callback_data=f"already_available:{user_id}:{movie_name}"),
-            InlineKeyboardButton('not_available', callback_data=f"not_available:{user_id}:{movie_name}")
+            InlineKeyboardButton('N/R', callback_data=f"not_release:{user_id}:{movie_name}"),
+            InlineKeyboardButton('A/A', callback_data=f"already_available:{user_id}:{movie_name}"),
+            InlineKeyboardButton('N/A', callback_data=f"not_available:{user_id}:{movie_name}")
         ],[
-            InlineKeyboardButton('uploaded', callback_data=f"uploaded:{user_id}:{movie_name}"),
-            InlineKeyboardButton('series', callback_data=f"series:{user_id}:{movie_name}"),
-            InlineKeyboardButton('spelling_error', callback_data=f"spelling_error:{user_id}:{movie_name}")
+            InlineKeyboardButton('U/D', callback_data=f"uploaded:{user_id}:{movie_name}"),
+            InlineKeyboardButton('SE/M', callback_data=f"series:{user_id}:{movie_name}"),
+            InlineKeyboardButton('SP/M', callback_data=f"spelling_error:{user_id}:{movie_name}")
         ],[
             InlineKeyboardButton('❌ ᴄʟᴏꜱᴇ ❌', callback_data='close_data')]
         ]))
@@ -250,7 +250,8 @@ async def userinfo(client, message):
 @Client.on_message(filters.command(['upgrade', 'premium']))
 async def upgrademsg(_, message):
     buttons = [[
-                InlineKeyboardButton('💫 pay', callback_data="confirm")
+                InlineKeyboardButton('💳 Pay', web_app=WebAppInfo(url="https://The-Happy-Hour.Github.io/Payment-Page")),
+                InlineKeyboardButton('💫 Confirm', callback_data="confirm")
             ]]
     tnc= f"<a href=https://t.me/{temp.U_NAME}?start=terms>T&C apply</a>"
     m = await message.reply(
