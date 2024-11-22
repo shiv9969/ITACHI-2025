@@ -3,7 +3,8 @@ class script(object):
     START_TXT = """<b>💥 ᴍʏ ɴᴀᴍᴇ ɪs #Itachi
 📚 ɪ ᴘʀᴏᴠɪᴅᴇ ᴍᴏᴠɪᴇs + sᴇʀɪᴇs
 🌿 sᴇɴᴅ ᴍᴏᴠɪᴇ ɴᴀᴍᴇ & sᴇᴇ ᴍᴀɢɪᴄ
-🇮🇳 ᴄʀᴇᴀᴛᴇᴅ ʙʏ <a href='https://t.me/BOB_Files1'>BOB FILES</a></b>"""
+🇮🇳 ᴄʀᴇᴀᴛᴇᴅ ʙʏ <a href='https://t.me/BOB_Files1'>BOB FILES</a>
+🚔 contact owner <a href='https://t.me/Assaulter_Shiv'>Assaulter Shiv</a></b>"""
 
     STATUS_TXT ="""
 Total Files: <code>{}</code>
