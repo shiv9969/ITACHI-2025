@@ -236,7 +236,7 @@ async def public_group_filter(client, message):
 
         finally:
             if filter:
-                await asyncio.sleep(600)
+                await asyncio.sleep(500)
                 await message.delete()
                 await filter.delete()
     else:
