@@ -243,6 +243,8 @@ async def public_group_filter(client, message):
         try:
             text, button = await auto_filter(client, message)
             filter = await message.reply(text=f"<b>{text}</b>", reply_markup=button, disable_web_page_preview=True)
+            await asyncio.sleep(300)
+            await filter.delete()
         except Exception as e:
             logger.error(e)      
 
