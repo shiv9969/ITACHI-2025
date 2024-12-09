@@ -53,4 +53,4 @@ STREAM_API = (environ.get('STREAM_API', 'dd5303bb44fa8da37e0ea9164c138b5c3d68558
 STREAM_MODE = is_enabled((environ.get('STREAM_MODE', "False")), False) # Agar Streem Me Shortner Lagana Ho to True Kar Dena
 
 BIN_CHANNEL = int(environ.get('BIN_CHANNEL', -1001916812956)) #same As File Streem Bot
-URL = environ.get("URL", "https://f2lx-70359b01db6d.herokuapp.com/")
+URL = environ.get("URL", "https://streamm-4be94f730245.herokuapp.com/")
