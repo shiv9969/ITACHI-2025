@@ -72,7 +72,7 @@ async def start(client, message):
         buttons = [[
                     # InlineKeyboardButton('Refer', callback_data="refer"),
                      InlineKeyboardButton('Premium', callback_data="upgrd"),
-                     InlineKeyboardButton(" ➕ Add To Your Group ➕", url='http://t.me/Bobfilterbot?startgroup=true')
+                     InlineKeyboardButton(" ➕ Add To Your Group ➕", url='http://t.me/narutossssbot?startgroup=true')
                      ],[
                     InlineKeyboardButton('⚠️ ғᴇᴀᴛᴜʀᴇ', callback_data='help'),
                     InlineKeyboardButton('🌿 ᴀʙᴏᴜᴛ', callback_data='about')
