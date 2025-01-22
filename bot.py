@@ -8,6 +8,7 @@ from pyrogram import types
 from fastapi import FastAPI
 import uvicorn
 import threading
+import asyncio
 
 app = FastAPI()
 
@@ -62,8 +63,8 @@ bot = Bot()
 def run_fastapi():
     uvicorn.run(app, host="0.0.0.0", port=8000)
 
-def run_pyrogram():
-    bot.run()
+async def run_pyrogram():
+    await bot.start()
 
 @app.get("/")
 async def root():
@@ -71,6 +72,8 @@ async def root():
 
 if __name__ == "__main__":
     t1 = threading.Thread(target=run_fastapi)
-    t2 = threading.Thread(target=run_pyrogram)
     t1.start()
-    t2.start()
+    loop = asyncio.new_event_loop()
+    asyncio.set_event_loop(loop)
+    loop.run_until_complete(run_pyrogram())
+    loop.run_forever()
