@@ -1,4 +1,3 @@
-import logging
 from pyrogram import Client, __version__
 from database.ia_filterdb import Media
 from database.users_chats_db import db
