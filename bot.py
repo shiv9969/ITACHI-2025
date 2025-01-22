@@ -1,16 +1,14 @@
 import logging
-from typing import AsyncGenerator
-from pyrogram import Client
+from pyrogram import Client, __version__
 from database.ia_filterdb import Media
 from database.users_chats_db import db
 from info import API_ID, API_HASH, BOT_TOKEN
 from utils import temp
-from typing import Union, Optional
+from typing import Union, Optional, AsyncGenerator
 from pyrogram import types
 from fastapi import FastAPI
-import asyncio
-import sys
 import uvicorn
+import threading
 
 app = FastAPI()
 
@@ -33,12 +31,12 @@ class Bot(Client):
         await Media.ensure_indexes()
         me = await self.get_me()
         temp.BOT = self
-        temp.ME = me.id  # Assuming you want the bot ID here instead of a link
+        temp.ME = me.id
         temp.U_NAME = me.username
         temp.B_NAME = me.first_name
         self.username = '@' + me.username
         print(f"{temp.U_NAME} start ")
-        logging.info("Bot started.")
+        logging.info(f"Bot started")
 
     async def stop(self, *args):
         await super().stop()
@@ -49,7 +47,7 @@ class Bot(Client):
         chat_id: Union[int, str],
         limit: int,
         offset: int = 0,
-    ) -> Optional[asyncio.AsyncGenerator["types.Message", None]]:
+    ) -> Optional[AsyncGenerator["types.Message", None]]:
         current = offset
         while True:
             new_diff = min(200, limit - current)
@@ -62,15 +60,18 @@ class Bot(Client):
 
 bot = Bot()
 
-async def main():
-    await bot.start()
+def run_fastapi():
+    uvicorn.run(app, host="0.0.0.0", port=8000)
 
-@app.get("/healthcheck")
-async def healthcheck():
-    return {"status": "ok"}
+def run_pyrogram():
+    bot.run()
+
+@app.get("/")
+async def root():
+    return {"message": "Bot is running"}
 
 if __name__ == "__main__":
-    if len(sys.argv) > 1 and sys.argv[1] == "bot":
-        asyncio.run(main())
-    elif len(sys.argv) > 1 and sys.argv[1] == "web":
-        uvicorn.run("main:app", host="0.0.0.0", port=8000, reload=True)
+    t1 = threading.Thread(target=run_fastapi)
+    t2 = threading.Thread(target=run_pyrogram)
+    t1.start()
+    t2.start()
