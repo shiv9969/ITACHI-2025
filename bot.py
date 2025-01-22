@@ -1,3 +1,4 @@
+import logging
 from pyrogram import Client, __version__
 from database.ia_filterdb import Media
 from database.users_chats_db import db
@@ -7,9 +8,7 @@ from typing import Union, Optional, AsyncGenerator
 from pyrogram import types
 from fastapi import FastAPI
 import uvicorn
-import threading
 import asyncio
-import logging 
 
 app = FastAPI()
 
@@ -61,9 +60,6 @@ class Bot(Client):
 
 bot = Bot()
 
-def run_fastapi():
-    uvicorn.run("bot:app", host="0.0.0.0", port=8000, reload=True)
-
 async def run_pyrogram():
     await bot.start()
 
@@ -72,9 +68,7 @@ async def root():
     return {"message": "Bot is running"}
 
 if __name__ == "__main__":
-    t1 = threading.Thread(target=run_fastapi)
-    t1.start()
     loop = asyncio.new_event_loop()
     asyncio.set_event_loop(loop)
     loop.run_until_complete(run_pyrogram())
-    loop.run_forever()
+    uvicorn.run("bot:app", host="0.0.0.0", port=8000, reload=True)
