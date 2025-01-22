@@ -9,6 +9,7 @@ from fastapi import FastAPI
 import uvicorn
 import threading
 import asyncio
+import logging 
 
 app = FastAPI()
 
