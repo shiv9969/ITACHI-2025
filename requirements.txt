@@ -14,3 +14,5 @@ aiofiles
 shortzy
 fastapi 
 uvicorn 
+fastapi 
+uvicorn
