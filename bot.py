@@ -34,11 +34,11 @@ class Bot(Client):
         self.username = '@' + me.username
         print(f"{temp.U_NAME} start ✅")
         logging.info(f"Bot started")
-        #web-server
-        # app = web.AppRunner(await web_server())
-        # await app.setup()
-        # port = "5054"
-        # await web.TCPSite(app, "0.0.0.0", port).start()
+        web-server
+        app = web.AppRunner(await web_server())
+        await app.setup()
+        port = "5054"
+         await web.TCPSite(app, "0.0.0.0", port).start()
 
     async def stop(self, *args):
         await super().stop()
