@@ -7,20 +7,21 @@ from utils import temp
 from typing import Union, Optional, AsyncGenerator
 from pyrogram import types
 from aiohttp import web
+from flask import Flask
 import os
 
 
-# Function to handle web requests
-async def web_server():
-    app = web.Application()
-    routes = web.RouteTableDef()
+# Flask Web Server for Koyeb
+flask_app = Flask(__name__)
 
-    @routes.get("/")
-    async def home(request):
-        return web.Response(text="Bot is running!", content_type="text/html")
+@flask_app.route('/')
+def home():
+    return "Bot is running!"
 
-    app.add_routes(routes)
-    return app
+# Start Flask in a separate thread
+def run_flask():
+    port = int(os.environ.get("PORT", 8080))
+    flask_app.run(host="0.0.0.0", port=port)
 
 
 class Bot(Client):
@@ -49,12 +50,9 @@ class Bot(Client):
         print(f"{temp.U_NAME} start ✅")
         logging.info(f"Bot started")
 
-        # Start the web server
-        runner = web.AppRunner(await web_server())
-        await runner.setup()
-        port = int(os.environ.get("PORT", 8080))  # Get PORT from env
-        site = web.TCPSite(runner, "0.0.0.0", port)
-        await site.start()
+        # Start Flask web server
+        import threading
+        threading.Thread(target=run_flask, daemon=True).start()
 
     async def stop(self, *args):
         await super().stop()
@@ -75,14 +73,6 @@ class Bot(Client):
             for message in messages:
                 yield message
                 current += 1
-
-
-# Flask Web Server for Koyeb
-flask_app = web.Application()
-
-@flask_app.route("/")
-async def home(request):
-    return web.Response(text="Bot is running!", content_type="text/html")
 
 
 # Start the bot
