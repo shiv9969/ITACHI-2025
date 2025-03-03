@@ -7,12 +7,23 @@ from utils import temp
 from typing import Union, Optional, AsyncGenerator
 from pyrogram import types
 from aiohttp import web
-from flask import Flask
 import os
 
 
-class Bot(Client):
+# Function to handle web requests
+async def web_server():
+    app = web.Application()
+    routes = web.RouteTableDef()
 
+    @routes.get("/")
+    async def home(request):
+        return web.Response(text="Bot is running!", content_type="text/html")
+
+    app.add_routes(routes)
+    return app
+
+
+class Bot(Client):
     def __init__(self):
         super().__init__(
             name="autofilter",
@@ -38,15 +49,17 @@ class Bot(Client):
         print(f"{temp.U_NAME} start ✅")
         logging.info(f"Bot started")
 
-        app = web.AppRunner(await web_server())  # Removed incorrect "web-server" line
-        await app.setup()
-        port = 5054  # Changed from string to integer
-        await web.TCPSite(app, "0.0.0.0", port).start()  # Fixed indentation
+        # Start the web server
+        runner = web.AppRunner(await web_server())
+        await runner.setup()
+        port = int(os.environ.get("PORT", 8080))  # Get PORT from env
+        site = web.TCPSite(runner, "0.0.0.0", port)
+        await site.start()
 
     async def stop(self, *args):
         await super().stop()
         logging.info("Bot stopped.")
-    
+
     async def iter_messages(
         self,
         chat_id: Union[int, str],
@@ -62,16 +75,16 @@ class Bot(Client):
             for message in messages:
                 yield message
                 current += 1
-                
-app = Flask(__name__)
 
-@app.route('/')
-def home():
-    return "Bot is running!"
 
-if __name__ == "__main__":
-    port = int(os.environ.get("PORT", 8080))
-    app.run(host="0.0.0.0", port=port)
+# Flask Web Server for Koyeb
+flask_app = web.Application()
 
+@flask_app.route("/")
+async def home(request):
+    return web.Response(text="Bot is running!", content_type="text/html")
+
+
+# Start the bot
 app = Bot()
 app.run() 
