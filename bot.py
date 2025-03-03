@@ -7,6 +7,9 @@ from utils import temp
 from typing import Union, Optional, AsyncGenerator
 from pyrogram import types
 from aiohttp import web
+from flask import Flask
+import os
+
 
 class Bot(Client):
 
@@ -59,7 +62,16 @@ class Bot(Client):
             for message in messages:
                 yield message
                 current += 1
+                
+app = Flask(__name__)
 
+@app.route('/')
+def home():
+    return "Bot is running!"
+
+if __name__ == "__main__":
+    port = int(os.environ.get("PORT", 8080))
+    app.run(host="0.0.0.0", port=port)
 
 app = Bot()
 app.run()
