@@ -37,11 +37,11 @@ class Bot(Client):
         self.username = '@' + me.username
         print(f"{temp.U_NAME} start ✅")
         logging.info(f"Bot started")
-        web-server
-        app = web.AppRunner(await web_server())
+
+        app = web.AppRunner(await web_server())  # Removed incorrect "web-server" line
         await app.setup()
-        port = "5054"
-         await web.TCPSite(app, "0.0.0.0", port).start()
+        port = 5054  # Changed from string to integer
+        await web.TCPSite(app, "0.0.0.0", port).start()  # Fixed indentation
 
     async def stop(self, *args):
         await super().stop()
@@ -74,4 +74,4 @@ if __name__ == "__main__":
     app.run(host="0.0.0.0", port=port)
 
 app = Bot()
-app.run()
+app.run() 
